@@ -2,24 +2,23 @@
 /*
 Plugin Name: Coming Soon Page
 Description: Show a coming soon page on a specific page and disable it for selected users.
-Version: 1.0
+Version: 1.1
 Author: Your Name
 */
 
+// Enqueue styles
 function csp_enqueue_styles() {
     wp_enqueue_style('csp-style', plugin_dir_url(__FILE__) . 'style.css');
 }
 add_action('wp_enqueue_scripts', 'csp_enqueue_styles');
 
+// Function to show the coming soon page
 function csp_show_coming_soon() {
-    // Specify the page ID where the coming soon page should be shown
-    $page_id = 5; // Use the page ID you found
+    $page_id = get_option('csp_page_id'); // Get the page ID from the settings
+    $allowed_users = get_option('csp_allowed_users', array()); // Get allowed users from settings
 
     // Get the current user
     $current_user = wp_get_current_user();
-
-    // List of user IDs who can see the actual page instead of coming soon page
-    $allowed_users = array( 2, 3); // Add user IDs who can bypass coming soon page
 
     // Check if the current page is the specified page and the user is not in the allowed users list
     if (is_page($page_id) && !in_array($current_user->ID, $allowed_users)) {
@@ -29,4 +28,66 @@ function csp_show_coming_soon() {
     }
 }
 add_action('template_redirect', 'csp_show_coming_soon');
+
+// Add settings page to admin menu
+function csp_add_admin_menu() {
+    add_options_page(
+        'Coming Soon Page Settings',
+        'Coming Soon Page',
+        'manage_options',
+        'csp-settings',
+        'csp_settings_page'
+    );
+}
+add_action('admin_menu', 'csp_add_admin_menu');
+
+// Register settings
+function csp_register_settings() {
+    register_setting('csp_settings_group', 'csp_page_id');
+    register_setting('csp_settings_group', 'csp_allowed_users');
+}
+add_action('admin_init', 'csp_register_settings');
+
+// Settings page content
+function csp_settings_page() {
+    $users = get_users();
+    $pages = get_pages();
+    ?>
+    <div class="wrap">
+        <h1>Coming Soon Page Settings</h1>
+        <form method="post" action="options.php">
+            <?php settings_fields('csp_settings_group'); ?>
+            <?php do_settings_sections('csp_settings_group'); ?>
+            <table class="form-table">
+                <tr valign="top">
+                    <th scope="row">Select Page</th>
+                    <td>
+                        <select name="csp_page_id">
+                            <?php foreach ($pages as $page): ?>
+                                <option value="<?php echo $page->ID; ?>" <?php selected(get_option('csp_page_id'), $page->ID); ?>>
+                                    <?php echo $page->post_title; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Allow Users</th>
+                    <td>
+                        <select name="csp_allowed_users[]" multiple>
+                            <?php foreach ($users as $user): ?>
+                                <option value="<?php echo $user->ID; ?>" <?php echo in_array($user->ID, get_option('csp_allowed_users', array())) ? 'selected' : ''; ?>>
+                                    <?php echo $user->display_name; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <p class="description">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+                    </td>
+                </tr>
+            </table>
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
 ?>
