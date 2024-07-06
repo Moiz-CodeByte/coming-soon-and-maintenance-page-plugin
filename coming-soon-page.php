@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Coming Soon Page
-Description: Show a coming soon page on specific pages and disable it for selected users.
-Version: 1.6
-Author: Your Name
+Plugin Name: Coming Soon , Maintenance Mode
+Description: Show a coming soon / Maintenance Mode page on specific pages and disable it for selected users.
+Version: 0.1
+Author: preprocessor Byte Team
 */
 
 // Enqueue styles and scripts
@@ -129,7 +129,7 @@ function csp_settings_page() {
                     </td>
                 </tr>
                 <tr valign="top" class="csp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Allow Users</th>
+                    <th scope="row">Disable for Users</th>
                     <td>
                         <?php foreach ($users as $user): ?>
                             <label>
@@ -143,7 +143,7 @@ function csp_settings_page() {
                     <th scope="row">Select Coming Soon Page</th>
                     <td>
                         <select name="csp_coming_soon_page_id">
-                            <option value="">Select a page</option>
+                            <option value="">Select a mainteniance page</option>
                             <?php foreach ($pages as $page): ?>
                                 <option value="<?php echo $page->ID; ?>" <?php selected($page->ID, $coming_soon_page_id); ?>>
                                     <?php echo $page->post_title; ?>
