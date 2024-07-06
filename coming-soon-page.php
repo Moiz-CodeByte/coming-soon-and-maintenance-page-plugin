@@ -27,7 +27,8 @@ function csp_show_coming_soon() {
     if (!is_array($allowed_users)) {
         $allowed_users = explode(',', $allowed_users);
     }
-
+   
+    
     // Get the current user
     $current_user = wp_get_current_user();
 
