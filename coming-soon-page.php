@@ -11,17 +11,13 @@ function csp_enqueue_styles_scripts() {
     // Enqueue plugin styles
     wp_enqueue_style('csp-style', plugin_dir_url(__FILE__) . 'style.css');
     wp_enqueue_script('csp-script', plugin_dir_url(__FILE__) . 'script.js', array('jquery'), false, true);
-
-    // Check if Elementor is active and enqueue its assets
-    if (defined('ELEMENTOR_PATH') && class_exists('Elementor\Plugin')) {
-        $elementor = \Elementor\Plugin::$instance;
-
-        // Enqueue Elementor styles
-        $elementor->frontend->enqueue_styles();
-
-        // Enqueue Elementor scripts
-        $elementor->frontend->enqueue_scripts();
-    }
+    
+// Check if Elementor is active and enqueue its assets
+if (defined('ELEMENTOR_PATH') && class_exists('Elementor\Plugin')) {
+    wp_enqueue_style('elementor-frontend'); // Enqueue Elementor's frontend styles
+    //wp_enqueue_script('elementor-frontend'); // Enqueue Elementor's frontend scripts
+}
+    
 }
 add_action('wp_enqueue_scripts', 'csp_enqueue_styles_scripts');
 add_action('admin_enqueue_scripts', 'csp_enqueue_styles_scripts');
