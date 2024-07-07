@@ -9,7 +9,8 @@ Author: Preprocessor Byte Team
 // Define plugin path constants
 define('csmp_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('csmp_PLUGIN_URL', plugin_dir_url(__FILE__));
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 // Include required files
 require_once csmp_PLUGIN_DIR . 'includes/enqueue.php';
 require_once csmp_PLUGIN_DIR . 'includes/display.php';
@@ -20,7 +21,7 @@ function csmp_admin_notice() {
     $is_active = get_option('csmp_is_active', false);
     if ($is_active) {
         echo '<div class="notice notice-warning is-dismissible">
-            <p><strong>Maintenance Mode is active.</strong></p>
+            <p><strong>Maintenance Mode </strong></p>
         </div>';
     }
 }
