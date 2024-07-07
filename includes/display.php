@@ -1,12 +1,12 @@
 <?php
 // Function to show the coming soon page
-function csp_show_coming_soon() {
-    $is_active = get_option('csp_is_active', false);
-    $page_ids = get_option('csp_page_ids', array());
-    $allowed_users = get_option('csp_allowed_users', array());
-    $coming_soon_page_id = get_option('csp_coming_soon_page_id');
-    $disable_header = get_option('csp_disable_header', false);
-    $disable_footer = get_option('csp_disable_footer', false);
+function csmp_show_coming_soon() {
+    $is_active = get_option('csmp_is_active', false);
+    $page_ids = get_option('csmp_page_ids', array());
+    $allowed_users = get_option('csmp_allowed_users', array());
+    $coming_soon_page_id = get_option('csmp_coming_soon_page_id');
+    $disable_header = get_option('csmp_disable_header', false);
+    $disable_footer = get_option('csmp_disable_footer', false);
 
     $page_ids = is_array($page_ids) ? $page_ids : explode(',', $page_ids);
     $allowed_users = is_array($allowed_users) ? $allowed_users : explode(',', $allowed_users);
@@ -36,5 +36,5 @@ function csp_show_coming_soon() {
         }
     }
 }
-add_action('template_redirect', 'csp_show_coming_soon');
+add_action('template_redirect', 'csmp_show_coming_soon');
 ?>

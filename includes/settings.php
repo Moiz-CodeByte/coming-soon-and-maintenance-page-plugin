@@ -38,13 +38,13 @@ function csp_settings_page() {
     $pages = get_pages();
     ?>
     <div class="wrap">
-        <h1>Coming Soon Page Settings</h1>
+        <h1>Maintenance Page Settings</h1>
         <form method="post" action="options.php">
             <?php settings_fields('csp_settings_group'); ?>
             <?php do_settings_sections('csp_settings_group'); ?>
             <table class="form-table">
                 <tr valign="top">
-                    <th scope="row">Activate Coming Soon Page</th>
+                    <th scope="row">Activate Maintenance Page</th>
                     <td>
                         <input type="checkbox" id="csp_is_active" name="csp_is_active" value="1" <?php checked(1, $is_active); ?> />
                     </td>
@@ -63,7 +63,7 @@ function csp_settings_page() {
                     </td>
                 </tr>
                 <tr valign="top" class="csp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Disable for Users</th>
+                    <th scope="row">Disable Maintenance Page for Users</th>
                     <td>
                         <?php foreach ($users as $user): ?>
                             <label>
@@ -74,7 +74,7 @@ function csp_settings_page() {
                     </td>
                 </tr>
                 <tr valign="top" class="csp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Select Coming Soon Page</th>
+                    <th scope="row">Select Maintenance Page</th>
                     <td>
                         <select name="csp_coming_soon_page_id">
                             <option value="">Select a maintenance page</option>
