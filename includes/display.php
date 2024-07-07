@@ -5,8 +5,8 @@ function csmp_show_coming_soon() {
     $page_ids = get_option('csmp_page_ids', array());
     $allowed_users = get_option('csmp_allowed_users', array());
     $coming_soon_page_id = get_option('csmp_coming_soon_page_id');
-    $disable_header = get_option('csmp_disable_header', false);
-    $disable_footer = get_option('csmp_disable_footer', false);
+    $disable_hf = get_option('csmp_disable_header_footer', false);
+   // $disable_footer = get_option('csmp_disable_footer', false);
 
     $page_ids = is_array($page_ids) ? $page_ids : explode(',', $page_ids);
     $allowed_users = is_array($allowed_users) ? $allowed_users : explode(',', $allowed_users);
@@ -20,11 +20,11 @@ function csmp_show_coming_soon() {
                 global $post;
                 $post = $coming_soon_page;
                 setup_postdata($post);
-                if (!$disable_header) {
+                if (!$disable_hf) {
                     get_header();
                 }
                 the_content();
-                if (!$disable_footer) {
+                if (!$disable_hf) {
                     get_footer();
                 }
                 wp_reset_postdata();

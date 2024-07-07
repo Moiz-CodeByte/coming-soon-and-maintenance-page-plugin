@@ -13,12 +13,13 @@ add_action('admin_menu', 'csmp_add_admin_menu');
 
 // Register settings
 function csmp_register_settings() {
+    
     register_setting('csmp_settings_group', 'csmp_is_active');
     register_setting('csmp_settings_group', 'csmp_page_ids');
     register_setting('csmp_settings_group', 'csmp_allowed_users');
     register_setting('csmp_settings_group', 'csmp_coming_soon_page_id');
-    register_setting('csmp_settings_group', 'csmp_disable_header');
-    register_setting('csmp_settings_group', 'csmp_disable_footer');
+    register_setting('csmp_settings_group', 'csmp_disable_header_footer');
+
 }
 add_action('admin_init', 'csmp_register_settings');
 
@@ -28,8 +29,8 @@ function csmp_settings_page() {
     $page_ids = get_option('csmp_page_ids', array());
     $allowed_users = get_option('csmp_allowed_users', array());
     $coming_soon_page_id = get_option('csmp_coming_soon_page_id');
-    $disable_header = get_option('csmp_disable_header', false);
-    $disable_footer = get_option('csmp_disable_footer', false);
+    $disable_hf = get_option('csmp_disable_header_footer', false);
+
 
     $page_ids = is_array($page_ids) ? $page_ids : explode(',', $page_ids);
     $allowed_users = is_array($allowed_users) ? $allowed_users : explode(',', $allowed_users);
@@ -89,17 +90,12 @@ function csmp_settings_page() {
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Disable Header</th>
+                    <th scope="row">Disable Header Footer</th>
                     <td>
-                        <input type="checkbox" id="csmp_disable_header" name="csmp_disable_header" value="1" <?php checked(1, $disable_header); ?> />
+                        <input type="checkbox" id="csmp_disable_header_footer" name="csmp_disable_header_footer" value="1" <?php checked(1, $disable_hf); ?> />
                     </td>
                 </tr>
-                <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Disable Footer</th>
-                    <td>
-                        <input type="checkbox" id="csmp_disable_footer" name="csmp_disable_footer" value="1" <?php checked(1, $disable_footer); ?> />
-                    </td>
-                </tr>
+              
             </table>
             <?php submit_button(); ?>
         </form>
@@ -116,13 +112,13 @@ function csmp_settings_page() {
         $('.csmp-users-select').select2({
             width: '50%',
             placeholder: 'Select users',
-            allowClear: true // Option to clear selection
+            allowClear: true 
         });
 
         $('.csmp-coming-soon-page').select2({
             width: '50%',
             placeholder: 'Select a maintenance page',
-            allowClear: true // Option to clear selection
+            allowClear: true
         });
     });
     </script>
