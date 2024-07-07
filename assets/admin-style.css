@@ -1,0 +1,9 @@
+#wp-admin-bar-csp-maintenance-mode > .ab-item {
+    background-color: #ff0000; 
+    color: #ffffff; 
+}
+
+#wp-admin-bar-csp-maintenance-mode > .ab-item:hover {
+    background-color: #cc0000; 
+    color: #ffffff; 
+}

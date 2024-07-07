@@ -1,5 +1,4 @@
 <?php
-
 // Function to show the coming soon page
 function csp_show_coming_soon() {
     $is_active = get_option('csp_is_active', false);
@@ -38,3 +37,4 @@ function csp_show_coming_soon() {
     }
 }
 add_action('template_redirect', 'csp_show_coming_soon');
+?>
