@@ -7,3 +7,9 @@
     background-color: #cc0000; 
     color: #ffffff; 
 }
+
+/* Change background color of the Maintenance Page menu item */
+#adminmenu .wp-submenu a[href="options-general.php?page=csmp-settings"] {
+    background-color: #760dd8; /* Add your desired color here */
+    color: #fff; /* Optional: change the text color */
+}

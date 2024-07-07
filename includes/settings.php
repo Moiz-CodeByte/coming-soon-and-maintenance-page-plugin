@@ -50,7 +50,7 @@ function csmp_settings_page() {
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Select Pages</th>
+                    <th scope="row">Activate on specific Pages</th>
                     <td>
                         <select name="csmp_page_ids[]" multiple>
                             <?php foreach ($pages as $page): ?>
@@ -63,7 +63,7 @@ function csmp_settings_page() {
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
-                    <th scope="row">Disable Maintenance Page for Users</th>
+                    <th scope="row">Whitelist Specific Users</th>
                     <td>
                         <?php foreach ($users as $user): ?>
                             <label>
