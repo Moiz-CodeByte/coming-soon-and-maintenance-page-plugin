@@ -65,12 +65,15 @@ function csmp_settings_page() {
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
                     <th scope="row">Whitelist Specific Users</th>
                     <td>
-                        <?php foreach ($users as $user): ?>
-                            <label>
-                                <input type="checkbox" name="csmp_allowed_users[]" value="<?php echo $user->ID; ?>" <?php checked(in_array($user->ID, $allowed_users)); ?>>
-                                <?php echo $user->display_name; ?>
-                            </label><br>
-                        <?php endforeach; ?>
+                    <select name="csmp_allowed_users[]" multiple>
+                            <?php foreach ($users as $user): ?>
+                                <option value="<?php echo $user->ID; ?>" <?php selected(in_array($user->ID, $allowed_users)); ?>>
+                                    <?php echo $user->display_name; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <p class="description">Hold down the Ctrl (windows) / Command (Mac) button to select multiple users.</p>
+                        
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
