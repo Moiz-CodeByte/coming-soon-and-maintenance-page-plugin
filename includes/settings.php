@@ -52,7 +52,7 @@ function csmp_settings_page() {
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
                     <th scope="row">Activate on specific Pages</th>
                     <td>
-                        <select name="csmp_page_ids[]" multiple>
+                        <select name="csmp_page_ids[]" multiple="multiple" class="csmp-page-select">
                             <?php foreach ($pages as $page): ?>
                                 <option value="<?php echo $page->ID; ?>" <?php selected(in_array($page->ID, $page_ids)); ?>>
                                     <?php echo $page->post_title; ?>
@@ -65,7 +65,7 @@ function csmp_settings_page() {
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
                     <th scope="row">Whitelist Specific Users</th>
                     <td>
-                    <select name="csmp_allowed_users[]" multiple>
+                        <select name="csmp_allowed_users[]" multiple="multiple" class="csmp-users-select">
                             <?php foreach ($users as $user): ?>
                                 <option value="<?php echo $user->ID; ?>" <?php selected(in_array($user->ID, $allowed_users)); ?>>
                                     <?php echo $user->display_name; ?>
@@ -73,13 +73,12 @@ function csmp_settings_page() {
                             <?php endforeach; ?>
                         </select>
                         <p class="description">Hold down the Ctrl (windows) / Command (Mac) button to select multiple users.</p>
-                        
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
                     <th scope="row">Select Maintenance Page</th>
                     <td>
-                        <select name="csmp_coming_soon_page_id">
+                        <select name="csmp_coming_soon_page_id" class="csmp-coming-soon-page">
                             <option value="">Select a maintenance page</option>
                             <?php foreach ($pages as $page): ?>
                                 <option value="<?php echo $page->ID; ?>" <?php selected($page->ID, $coming_soon_page_id); ?>>
@@ -105,6 +104,29 @@ function csmp_settings_page() {
             <?php submit_button(); ?>
         </form>
     </div>
+    <script>
+    jQuery(document).ready(function($) {
+        // Initialize Select2 for pages and users
+        $('.csmp-page-select').select2({
+            width: '50%',
+            placeholder: 'Select pages',
+            allowClear: true // Option to clear selection
+        });
+
+        $('.csmp-users-select').select2({
+            width: '50%',
+            placeholder: 'Select users',
+            allowClear: true // Option to clear selection
+        });
+
+        $('.csmp-coming-soon-page').select2({
+            width: '50%',
+            placeholder: 'Select a maintenance page',
+            allowClear: true // Option to clear selection
+        });
+    });
+    </script>
     <?php
 }
+
 ?>

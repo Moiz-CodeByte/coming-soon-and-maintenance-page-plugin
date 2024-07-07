@@ -15,4 +15,11 @@ function csmp_enqueue_admin_styles() {
     wp_enqueue_style('csmp-admin-style', csmp_PLUGIN_URL . 'assets/admin-style.css');
 }
 add_action('admin_enqueue_scripts', 'csmp_enqueue_admin_styles');
+
+// Enqueue scripts and styles for Select2
+function csmp_enqueue_select2() {
+    wp_enqueue_script('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js', array('jquery'), '4.1.0', true);
+    wp_enqueue_style('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css', array(), '4.1.0', 'all');
+}
+add_action('admin_enqueue_scripts', 'csmp_enqueue_select2');
 ?>
