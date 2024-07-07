@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Coming Soon , Maintenance Mode
+Plugin Name: Coming Soon and Maintenance Mode
 Description: Show a coming soon / Maintenance Mode page on specific pages and disable it for selected users.
 Version: 0.1
 Author: preprocessor Byte Team
