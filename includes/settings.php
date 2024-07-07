@@ -13,7 +13,7 @@ add_action('admin_menu', 'csmp_add_admin_menu');
 
 // Register settings
 function csmp_register_settings() {
-    
+
     register_setting('csmp_settings_group', 'csmp_is_active');
     register_setting('csmp_settings_group', 'csmp_page_ids');
     register_setting('csmp_settings_group', 'csmp_allowed_users');
@@ -60,7 +60,6 @@ function csmp_settings_page() {
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <p class="description">Hold down the Ctrl (windows) / Command (Mac) button to select multiple pages.</p>
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
@@ -73,7 +72,6 @@ function csmp_settings_page() {
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <p class="description">Hold down the Ctrl (windows) / Command (Mac) button to select multiple users.</p>
                     </td>
                 </tr>
                 <tr valign="top" class="csmp-settings-options" <?php if (!$is_active) echo 'style="display:none;"'; ?>>
