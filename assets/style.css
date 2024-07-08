@@ -1,7 +1,7 @@
 .coming-soon {
     text-align: center;
     font-size: 2em;
-    color: #333;
+    color: #020202;
     padding: 100px;
     background-color: #f4f4f4;
     border: 2px solid #ddd;
@@ -9,3 +9,4 @@
     margin: 50px auto;
     max-width: 600px;
 }
+

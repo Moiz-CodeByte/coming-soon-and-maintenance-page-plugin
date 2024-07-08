@@ -15,6 +15,8 @@ ini_set('display_errors', 1);
 require_once csmp_PLUGIN_DIR . 'includes/enqueue.php';
 require_once csmp_PLUGIN_DIR . 'includes/display.php';
 require_once csmp_PLUGIN_DIR . 'includes/settings.php';
+require_once csmp_PLUGIN_DIR . 'includes/customizer.php';
+
 
 // Show admin notice when maintenance mode is active
 function csmp_admin_notice() {
