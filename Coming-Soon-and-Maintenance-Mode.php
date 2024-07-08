@@ -44,10 +44,14 @@ function csmp_admin_bar_menu($wp_admin_bar) {
 add_action('admin_bar_menu', 'csmp_admin_bar_menu', 100);
 
 // Add settings link on plugin installer page
+// Add settings link on plugin installer page
 function csmp_add_settings_link($links) {
     $settings_link = '<a href="options-general.php?page=csmp-settings">Settings</a>';
-    array_unshift($links, $settings_link);
+    $customize_link = '<a href="' . admin_url('customize.php?return=' . urlencode(admin_url('options-general.php?page=csmp-settings'))) . '">Customize</a>';
+    
+    array_unshift($links, $settings_link, $customize_link);
     return $links;
 }
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'csmp_add_settings_link');
+
 ?>

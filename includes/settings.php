@@ -91,7 +91,7 @@ function csmp_settings_page() {
     <th scope="row">Disable Header Footer</th>
     <td>
         <input type="checkbox" id="csmp_disable_header_footer" name="csmp_disable_header_footer" value="1" <?php checked(1, $disable_hf); ?> />
-        <p class="description">Its also enable the plugin default footer to show.</p>
+        <p class="description">Also enable the plugin default footer to show.</p>
     </td>
 </tr>
 
