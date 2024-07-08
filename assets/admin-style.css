@@ -8,8 +8,21 @@
     color: #ffffff; 
 }
 
-/* Change background color of the Maintenance Page menu item */
 #adminmenu .wp-submenu a[href="options-general.php?page=csmp-settings"] {
-    background-color: #760dd8; /* Add your desired color here */
-    color: #fff; /* Optional: change the text color */
+    background-color: #760dd8; 
+    color: #fff; 
+}
+
+#accordion-section-csmp_social_icons_section .accordion-section-title {
+    background-color: #760dd8 !important;
+    color: #fff !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+}
+
+#accordion-section-csmp_footer_section .accordion-section-title {
+    background-color: #760dd8 !important;
+    color: #fff !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
 }
