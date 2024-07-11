@@ -64,7 +64,7 @@ The options with our brand color are plugin options.
 These social icons are shown in the footer.
 
 ![](img7.jpeg) 
-- ![](img8.jpeg)
+![](img8.jpeg)
 
 Users can select up to five icons to show in the footer.
 
