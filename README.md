@@ -1,6 +1,6 @@
 # Coming Soon and Maintenance Mode Plugin
 
-![](img1.png)
+![](assets/img1.png)
 
 ## WordSprint Hackathon 3.0           
 Coming Soon and Maintenance Mode Plugin
@@ -26,17 +26,17 @@ The source can be accessed through the link [here](https://github.com/Moiz-CodeB
 
 2. Upload the plugin.
 
-![](img2.jpeg)
+![](assets/img2.jpeg)
 
 3. Install and activate the plugin.
 4. Hover over Settings and go to the Maintenance Page.
 
-![](img3.jpeg)
+![](assets/img3.jpeg)
 
 5. Activate the Maintenance page.
 6. Then you will see more options.
 
-![](img4.jpeg)
+![](assets/img4.jpeg)
 
 - **Activate on Specific Pages**: You can also activate on all pages or a single page. Multiple selections are available.
 - **Whitelist Users**: You can also whitelist users from the list of users present on the website. Multiple selections are also possible.
@@ -51,20 +51,20 @@ Here you will find a bunch of plugin and theme options.
 
 The options with our brand color are plugin options.
 
-![](img5.jpeg)
+![](assets/img5.jpeg)
 
 - **Footer Section**
 
   The footer setting has an option of copyright text, text color, and footer background color.
 
-![](img6.jpeg)
+![](assets/img6.jpeg)
 
 - **Social Icons**
 
 These social icons are shown in the footer.
 
-![](img7.jpeg) 
-![](img8.jpeg)
+![](assets/img7.jpeg) 
+![](assets/img8.jpeg)
 
 Users can select up to five icons to show in the footer.
 
