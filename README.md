@@ -12,7 +12,7 @@ A plugin developed to show a maintenance page on specific pages. It also whiteli
 
 #### ii. Demo
 
-The plugin is tested live on our website [here](http://preprocessor-byte.abdulmoiz.net/wp-admin). 
+The plugin is tested live on our website [here](http://preprocessorbyte.abdulmoiz.net/wp-admin). 
 - Username: hello@abdulmoiz.net
 - Password: Ai12345@
 
