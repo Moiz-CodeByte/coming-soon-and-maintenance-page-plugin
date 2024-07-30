@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Coming Soon and Maintenance Mode
+Plugin Name: Coming Soon and Maintenance Page
 Description: Show a coming soon / Maintenance Mode page on specific pages and disable it for selected users.
 Version: 0.1
-Author: Preprocessor Byte Team
+Author: Abdul Moiz
 */
 
 // Define plugin path constants

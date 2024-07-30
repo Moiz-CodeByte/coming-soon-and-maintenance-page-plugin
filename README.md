@@ -1,75 +1,105 @@
 # Coming Soon and Maintenance Mode Plugin
 
-![](assets/img1.png)
+![Coming Soon and Maintenance Mode Plugin](assets/img1.jpeg)
 
-## WordSprint Hackathon 3.0           
-Coming Soon and Maintenance Mode Plugin
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Customization Options](#customization-options)
+- [Contributing](#contributing)
+- [Live Demo](#live-demo)
 
+## Introduction
+The **Coming Soon and Maintenance Mode Plugin** is a WordPress plugin developed to display a maintenance page on specific pages of your website. It allows you to whitelist users to bypass the maintenance page and has compatibility with maintenance designs created using Elementor. The plugin also includes customization options for adding footers and social icons.
 
-#### i. Introduction
+## Features
+- Display a maintenance page on selected or all pages
+- Whitelist users to bypass the maintenance page
+- Compatibility with Elementor-designed maintenance pages
+- Customization options for footer and social icons
+- Responsive design for both desktop and mobile devices
 
-A plugin developed to show a maintenance page on specific pages. It also whitelists users to not show the maintenance page. It has compatibility with select maintenance designed by Elementor. Add footer and social icons using customize options.
+## Getting Started
+### Prerequisites
+- A WordPress website
 
-#### ii. Demo
+### Installation
+1. Download the zip file from the GitHub repository.
+   [Link to GitHub Repository](https://github.com/moiz-codebyte/coming-soon-and-maintenance-page-plugin)
+2. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
+   ![](assets/img2.jpeg)
 
-The plugin is tested live on our website [here](http://preprocessorbyte.abdulmoiz.net/wp-admin). 
-- Username: hello@abdulmoiz.net
-- Password: Ai12345@
+3. Activate the plugin through the 'Plugins' screen in WordPress.
 
-#### iii. Source Code
+## Usage
+1. Navigate to the **Settings** menu and select **Maintenance Page**.
+   ![](assets/img3.jpg)
+2. Activate the Maintenance page.
+   ![](assets/img4.jpeg)
+3. Configure the following options:
+   - **Activate on Specific Pages**: Activate the maintenance mode on all pages or specific pages. Multiple selections are possible.
+   - **Whitelist Users**: Whitelist users from the list of users present on the website. Multiple selections are also possible.
+   - **Maintenance Page**: Select any page as the Maintenance page from the list of pages present on the website or develop one using Elementor.
+   - **Disable Header and Footer**: Disable the header and footer on the selected maintenance page.
+   ![](assets/img5.png)
 
-The source can be accessed through the link [here](https://github.com/Moiz-CodeByte/coming-soon-and-maintenance-page-plugin).
+## Customization Options
+1. Go to **Appearance** > **Customize**.
+2. Plugin options will be marked with purple color.
+     ![](assets/img6.png)
 
-#### iv. How to Install the Plugin?
+### Footer Section
+   ![](assets/img7.png)
 
-1. Download the zip file from the GitHub repository. [Link here](https://github.com/Moiz-CodeByte/coming-soon-and-maintenance-page-plugin)
+- **Copyright Text**: Customize the copyright text.
+- **Text Color**: Change the text color.
+- **Footer Background Color**: Change the footer background color.
 
-2. Upload the plugin.
+### Social Icons
+   ![](assets/img8.png)
 
-![](assets/img2.jpeg)
+- Select up to five social icons to display in the footer.
+- Note: These footer and social icons only appear when the header and footer of the maintenance page are disabled. This can be managed through the plugin settings.
 
-3. Install and activate the plugin.
-4. Hover over Settings and go to the Maintenance Page.
+## Contributing
+Contributions are welcome! If you have any ideas, suggestions, or improvements, feel free to create a pull request or open an issue.
 
-![](assets/img3.jpeg)
+### Steps to Contribute
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add your feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
 
-5. Activate the Maintenance page.
-6. Then you will see more options.
+### After Opening a Pull Request
+1. **Review**: Address any feedback or change requests made by the reviewers.
+2. **Approval**: Wait for the pull request to be approved by the maintainers.
+3. **Merge**: Once approved, the pull request will be merged by a maintainer.
+4. **Close**: The pull request will be closed upon merging. If not merged, it might be closed manually with an explanation.
+5. **Cleanup**: Delete your feature branch after the pull request is merged and update your local repository.
 
-![](assets/img4.jpeg)
+## License
+This project is open-source and available under the [MIT License](LICENSE).
 
-- **Activate on Specific Pages**: You can also activate on all pages or a single page. Multiple selections are available.
-- **Whitelist Users**: You can also whitelist users from the list of users present on the website. Multiple selections are also possible.
-- **Maintenance Page**: You can select any page as the Maintenance page from all the list of pages present on the website, or you can develop using **Elementor**.
-- **Disable Header and Footer**: You can disable the header and footer on the maintenance page.
+## Live Demo
+You can download zip and test it out and provide feedback to email. Please report any bug if you find out as we are committed to move it production and make it available for all user in WordPress directory 
 
-#### v. Customize Options
+For any questions or support, please contact at [hello@abdulmoiz.net](mailto:hello@abdulmoiz.net).
 
-- Go to the Customize option by going to Appearance then Customize.
+---
 
-Here you will find a bunch of plugin and theme options.
-
-The options with our brand color are plugin options.
-
-![](assets/img5.jpeg)
-
-- **Footer Section**
-
-  The footer setting has an option of copyright text, text color, and footer background color.
-
-![](assets/img6.jpeg)
-
-- **Social Icons**
-
-These social icons are shown in the footer.
-
-![](assets/img7.jpeg) 
-![](assets/img8.jpeg)
-
-Users can select up to five icons to show in the footer.
-
-**Note: This footer and social icons only show when the footer and header of the maintenance page are disabled.**
-
-**This can be disabled by going to our plugin setting.**
-
+This plugin is a product of **Team Preprocessor Byte** and was developed during the **WordSprint Hackathon 3.0**, where our team secured the **2nd position**.
 Thank You, iCode Guru, for providing this opportunity to compete with our compatibilities and industry best.
+
+Enjoy maintaining your website with ease!
